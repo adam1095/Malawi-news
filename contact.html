@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact - Malawi Daily Updates</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    form { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.08); }
+    label { display: block; margin-top: 12px; font-weight: bold; color: #0b2a4a; }
+    input, select, textarea {
+      width: 100%; padding: 10px; margin-top: 5px;
+      border: 1px solid #aaa; border-radius: 5px; font-size: 16px;
+    }
+    button {
+      margin-top: 20px; width: 100%; padding: 12px;
+      background: #c8102e; color: white; border: none;
+      border-radius: 5px; font-size: 16px; font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar"><span>MALAWI DAILY UPDATES &bull; Malawi's trusted source for daily news &bull; Send us your news tips</span></div>
+
+  <div class="header">
+    <h1>MALAWI DAILY UPDATES</h1>
+    <p>News that matters to Malawians</p>
+  </div>
+
+  <div class="nav">
+    <a href="index.html">Home</a>
+    <a href="index.html#malawi">Malawi</a>
+    <a href="index.html#politics">Politics</a>
+    <a href="index.html#business">Business</a>
+    <a href="index.html#sports">Sports</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <div class="container">
+    <h3 class="title">Contact Us / Send a News Tip</h3>
+
+    <form id="tipForm">
+      <label>Your name</label>
+      <input type="text" id="name" required>
+
+      <label>Category</label>
+      <select id="category">
+        <option>Malawi</option>
+        <option>Politics</option>
+        <option>Business</option>
+        <option>Sports</option>
+        <option>Other</option>
+      </select>
+
+      <label>Your news or message</label>
+      <textarea id="message" rows="5" required></textarea>
+
+      <button type="submit">Send on WhatsApp</button>
+    </form>
+
+    <h3 class="title">Reach Us Directly</h3>
+    <div class="notice"><b>Phone / WhatsApp:</b> +265 889 763 346</div>
+    <div class="notice"><b>Email:</b> gomaniadam10@gmail.com</div>
+  </div>
+
+  <div class="footer">
+    <p>&copy; 2026 Malawi Daily Updates</p>
+  </div>
+
+  <script>
+    document.getElementById("tipForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      var name = document.getElementById("name").value;
+      var category = document.getElementById("category").value;
+      var message = document.getElementById("message").value;
+
+      var text = "Malawi Daily Updates - News tip (" + category + ")\nFrom: " + name + "\n" + message;
+      var number = "265889763346";
+      window.open("https://wa.me/" + number + "?text=" + encodeURIComponent(text), "_blank");
+    });
+  </script>
+</body>
+</html>
